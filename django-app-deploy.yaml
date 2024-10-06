@@ -17,6 +17,13 @@ spec:
       containers:
       - name: django-container
         image: ebryyau/jango-python-app:v1
+        volumeMounts:
+          - name: db-connection
+            mountPath: /opt         
         ports:
         - containerPort: 8000
+      volumes:
+        - name: db-connection
+          secret:
+            secretName: test-secret
 
