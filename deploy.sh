@@ -69,8 +69,7 @@ helm install traefik traefik/traefik
 # Apply path based ingress
 kubectl apply -f ingress.yaml
 
-echo "Script finished"
-
-
-
-
+# Usefull output at the end
+echo "Applications deployed"
+kubectl get svc | grep traefik | awk -F" " '{print "To access Django app use: " $4 "/django"}'
+kubectl get svc | grep traefik | awk -F" " '{print "To access Nginx app use: " $4 "/nginx"}' 
