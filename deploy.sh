@@ -75,13 +75,14 @@ helm repo add traefik https://traefik.github.io/charts
 helm repo update
 helm install traefik traefik/traefik
 
+sleep 10
 # Apply path based ingress
-kubectl apply -f ingress.yaml
-sleep 5
-
+kubectl apply -f ingress-nginx.yaml
+kubectl apply -f ingress-traefik.yaml
 # Usefull output at the end
 echo "Applications deployed"
 
-kubectl get svc | grep "nginx-controller " | awk -F" " '{print "To access Grafana use: " $4 "/"}'
-kubectl get svc | grep "nginx-controller " | awk -F" " '{print "To access Django app use: " $4 "/django"}'
-kubectl get svc | grep "nginx-controller " | awk -F" " '{print "To access Nginx app use: " $4 "/nginx"}' 
+kubectl get svc -A | grep "traefik" | awk -F" " '{print "To access Prometheus use: " $4 "/"}'
+kubectl get svc -A | grep "nginx-controller " | awk -F" " '{print "To access Grafana use: " $4 "/"}'
+kubectl get svc -A | grep "nginx-controller " | awk -F" " '{print "To access Django app use: " $4 "/django"}'
+kubectl get svc -A | grep "nginx-controller " | awk -F" " '{print "To access Nginx app use: " $4 "/nginx"}' 

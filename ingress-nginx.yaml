@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: two-app-ingress
+  name: three-app-ingress
   namespace: default  # Use the correct namespace if needed
 spec:
   ingressClassName: nginx
