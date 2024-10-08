@@ -1,11 +1,12 @@
+## How to use KOPS and create kubernetes cluster?!
+
 People often use tools like **minikube** (tool that allow to create and manage local kubernetes cluster) for learning kubernetes. But it is important to understand, in real work, these tools only used in development environments(to test or something like this). 
 In real deployments, DevOps engineers should manage real kubernetes clusters with multiple nodes. For this kubernetes distributions used. 
 
-Kubernetes distribution
->[!info] Kubernetes distributions
->Kubernetes distributions are customized versions of Kubernetes provided by different vendors to simplify deployment, management, and scaling of Kubernetes clusters. These distributions often include additional tools, integrations, and support to enhance the Kubernetes experience for specific environments, such as on-premises, cloud, or hybrid setups. Here are some of the most popular: OpenShift (Red Hat), Rancher, Amazon EKS (Elastic Kubernetes Service), Azure Kubernetes Service (AKS)
+**Kubernetes distributions**
+are customized versions of Kubernetes provided by different vendors to simplify deployment, management, and scaling of Kubernetes clusters. These distributions often include additional tools, integrations, and support to enhance the Kubernetes experience for specific environments, such as on-premises, cloud, or hybrid setups. Here are some of the most popular: OpenShift (Red Hat), Rancher, Amazon EKS (Elastic Kubernetes Service), Azure Kubernetes Service (AKS)
 
-One of the main difference between open source kubernetes distro and for example EKS, is that when you use EKS, you can get a support from amazon in managing EKS cluster, configuration and etc. Such distro's has additional plugins and other user experience that it is not present in clear kubernetes distro.
+One of the main difference between open source kubernetes distro and for example EKS, is that when you use EKS, you can get a support from amazon in managing EKS cluster, configuration and etc(Because control plane node managed by Amazon). Such distro's has additional plugins and other user experience that it is not present in clear kubernetes distro.
 
 ### How DevOps engineers manage their clusters?
 
