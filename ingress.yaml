@@ -4,6 +4,7 @@ metadata:
   name: two-app-ingress
   namespace: default  # Use the correct namespace if needed
 spec:
+  ingressClassName: nginx
   rules:
   - http:
       paths:
@@ -21,4 +22,10 @@ spec:
             name: nginx-service
             port:
               number: 80  # The port exposed by your Django service
-
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: grafana
+            port:
+              number: 80
