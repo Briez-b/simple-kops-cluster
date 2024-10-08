@@ -1,1 +1,8 @@
-Day 33 - 34 - Kubernetes deployments and pods1
+## Repository with simple cluster deployment.
+
+**Here you can find:**
+1) Deployment, services, ingress and configMap manifests
+2) ./deploy.sh - script to create cluster with Kops and deploy everything: de
+3) /practice-docs - folder with my kubernetes practice notes(documented everything what I did with this cluster)
+
+
